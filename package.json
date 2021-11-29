@@ -2,7 +2,7 @@
   "name": "github-action-pr-title-update-branch",
   "version": "1.0.0",
   "description": "A GitHub Action that updates the PR title with information about the base branch it wants to merge to",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/main.js -o dist --minify"
   },
