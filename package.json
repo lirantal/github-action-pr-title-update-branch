@@ -10,9 +10,21 @@
     "type": "git",
     "url": "git+https://github.com/lirantal/github-action-pr-title-update-branch.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Liran Tal",
+    "email": "liran.tal@gmail.com",
+    "url": "https://github.com/lirantal"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "github action",
+    "github",
+    "action",
+    "pull request",
+    "update",
+    "title",
+    "pull request update title"
+  ],
   "bugs": {
     "url": "https://github.com/lirantal/github-action-pr-title-update-branch/issues"
   },
