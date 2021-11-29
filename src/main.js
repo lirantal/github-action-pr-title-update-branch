@@ -44,7 +44,12 @@ function updatePR({
 
 async function run() {
   try {
-    const token = core.getInput("token", { required: true });
+    const token = process.env["GITHUB_TOKEN"];
+    if (!token) {
+      core.setFailed("Requires: GITHUB_TOKEN");
+      return;
+    }
+
     const placement = core.getInput("placement", { required: false });
     const skip_if_found = core.getInput("skip_if_found", { required: false });
     const title = github.context.payload.pull_request.title;
