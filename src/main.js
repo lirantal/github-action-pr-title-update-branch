@@ -51,7 +51,7 @@ async function run() {
     }
 
     // @DEBUG
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
+    const payload = JSON.stringify(github.context, undefined, 2);
     console.log(`The event payload: ${payload}`);
 
     const placement = core.getInput("placement", { required: false });
