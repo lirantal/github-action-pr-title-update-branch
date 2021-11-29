@@ -50,6 +50,9 @@ async function run() {
       return;
     }
 
+    const context = JSON.stringify(github.context, undefined, 2);
+    core.info(`The event payload: ${context}`);
+
     if (github.context.eventName !== "pull_request") {
       core.info(
         `Skipping PR: this isn't a pull_request event for us to handle`
