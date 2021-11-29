@@ -50,9 +50,15 @@ async function run() {
       return;
     }
 
-    // @DEBUG
-    const payload = JSON.stringify(github.context, undefined, 2);
-    console.log(`The event payload: ${payload}`);
+    if (github.context.eventName !== "pull_request") {
+      core.info(
+        `Skipping PR: this isn't a pull_request event for us to handle`
+      );
+      return;
+    }
+
+    // @TODO
+    // only run if github.context."payload"."action" = "opened"
 
     const placement = core.getInput("placement", { required: false });
     const skip_if_found = core.getInput("skip_if_found", { required: false });
@@ -66,7 +72,6 @@ async function run() {
       title,
       skip_if_found,
       placement,
-      body,
       pull_number,
       owner,
       repo,
