@@ -61,6 +61,7 @@ async function run() {
       core.info(
         `Skipping PR: this PR was already updated with a base branch label`
       );
+      return;
     }
 
     const placement = core.getInput("placement", { required: false });
