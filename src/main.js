@@ -50,9 +50,6 @@ async function run() {
       return;
     }
 
-    const context = JSON.stringify(github.context, undefined, 2);
-    core.info(`The event payload: ${context}`);
-
     if (github.context.eventName !== "pull_request") {
       core.info(
         `Skipping PR: this isn't a pull_request event for us to handle`
@@ -60,8 +57,11 @@ async function run() {
       return;
     }
 
-    // @TODO
-    // only run if github.context."payload"."action" = "opened"
+    if (github.context.payload.action !== "opened") {
+      core.info(
+        `Skipping PR: this PR was already updated with a base branch label`
+      );
+    }
 
     const placement = core.getInput("placement", { required: false });
     const skip_if_found = core.getInput("skip_if_found", { required: false });
