@@ -12,6 +12,10 @@ function updatePR({
 }) {
   const octokit = github.getOctokit(token);
 
+  // @DEBUG
+  const payload = JSON.stringify(github.context.payload, undefined, 2);
+  console.log(`The event payload: ${payload}`);
+
   const baseBranch = github.context.payload.pull_request.base.ref;
 
   if (skip_if_found === true) {
