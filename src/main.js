@@ -12,10 +12,6 @@ function updatePR({
 }) {
   const octokit = github.getOctokit(token);
 
-  // @DEBUG
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
-
   const baseBranch = github.context.payload.pull_request.base.ref;
 
   if (skip_if_found === true) {
@@ -53,6 +49,10 @@ async function run() {
       core.setFailed("Requires: GITHUB_TOKEN");
       return;
     }
+
+    // @DEBUG
+    const payload = JSON.stringify(github.context.payload, undefined, 2);
+    console.log(`The event payload: ${payload}`);
 
     const placement = core.getInput("placement", { required: false });
     const skip_if_found = core.getInput("skip_if_found", { required: false });
