@@ -2,7 +2,7 @@ name: "Pull Request title update to include base branch"
 description: "A GitHub Action that updates the PR title with information about the base branch it wants to merge to"
 author: "Liran Tal <liran.tal@gmail.com"
 runs:
-  using: "node16"
+  using: "node12"
   main: "dist/main.js"
 branding:
   icon: "alert-circle"
