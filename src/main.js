@@ -50,13 +50,12 @@ async function run() {
       return;
     }
 
-    // @DEBUG
-    const context = JSON.stringify(github.context, undefined, 2);
-    core.info(`Context: ${context}`);
-
     if (github.context.eventName !== "pull_request") {
       core.info(
         `Skipping PR: this isn't a pull_request event for us to handle`
+      );
+      core.info(
+        `Tip: if you think this is a mistake, did you make sure to run this action in a 'pull_request' event?`
       );
       return;
     }
