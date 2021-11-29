@@ -1,0 +1,16 @@
+name: "Pull Request title update to include base branch"
+description: "A GitHub Action that updates the PR title with information about the base branch it wants to merge to"
+author: "Liran Tal <liran.tal@gmail.com"
+runs:
+  using: "node16"
+  main: "main.js"
+branding:
+  icon: "alert-circle"
+  color: "blue"
+inputs:
+  placement:
+    description: "Where to place the branch name"
+    required: false
+  skip_if_found:
+    description: "Skip update if base branch string is found in the title"
+    required: false

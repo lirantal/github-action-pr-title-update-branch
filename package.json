@@ -1,0 +1,24 @@
+{
+  "name": "github-action-pr-title-update-branch",
+  "version": "1.0.0",
+  "description": "A GitHub Action that updates the PR title with information about the base branch it wants to merge to",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lirantal/github-action-pr-title-update-branch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lirantal/github-action-pr-title-update-branch/issues"
+  },
+  "homepage": "https://github.com/lirantal/github-action-pr-title-update-branch#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}
