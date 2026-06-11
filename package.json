@@ -1,8 +1,4 @@
 {
-  "publishConfig": {
-    "provenance": true,
-    "access": "public"
-  },
   "name": "github-action-pr-title-update-branch",
   "version": "1.0.0",
   "description": "A GitHub Action that updates the PR title with information about the base branch it wants to merge to",
@@ -39,5 +35,9 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.32.0"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
   }
 }
